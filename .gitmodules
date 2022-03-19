@@ -1,0 +1,3 @@
+[submodule "ethernet_bridge"]
+	path = ethernet_bridge
+	url = git@github.com:DavidDaoTu/ethernet_bridge.git
