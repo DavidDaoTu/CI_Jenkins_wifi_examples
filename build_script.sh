@@ -2,12 +2,12 @@
 export PATH=$PATH:$PWD/slc_cli
 echo "PATH = $PATH"
 echo "Inside build_script.sh" >> test.txt
-sudo apt-get update
+apt-get update
 
 # Download GNU ARM Toolchain
-sudo wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/${ARM_TOOLCHAIN_VERSION}/gcc-arm-none-eabi-${ARM_TOOLCHAIN_VERSION}-x86_64-linux.tar.bz2
-sudo mkdir ./gnu_arm
-sudo tar xf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 --strip-components=1 -C ./gnu_arm
+wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/${ARM_TOOLCHAIN_VERSION}/gcc-arm-none-eabi-${ARM_TOOLCHAIN_VERSION}-x86_64-linux.tar.bz2
+mkdir ./gnu_arm
+tar xf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 --strip-components=1 -C ./gnu_arm
 
 #export PATH=$PATH:/home/tudv7/SimplicityStudio/SimplicityStudio_v5/developer/adapter_packs/commander
 
