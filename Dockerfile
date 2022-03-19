@@ -21,15 +21,16 @@ RUN pip install -r ./slc_cli/requirements.txt
 RUN chmod a+x slc_cli/*
 
 # Download GNU ARM Toolchain
-RUN wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/${ARM_TOOLCHAIN_VERSION}/gcc-arm-none-eabi-${ARM_TOOLCHAIN_VERSION}-x86_64-linux.tar.bz2
-RUN mkdir ./gnu_arm
-RUN tar xf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 --strip-components=1 -C ./gnu_arm
+# RUN wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/${ARM_TOOLCHAIN_VERSION}/gcc-arm-none-eabi-${ARM_TOOLCHAIN_VERSION}-x86_64-linux.tar.bz2
+# RUN mkdir ./gnu_arm
+# RUN tar xf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 --strip-components=1 -C ./gnu_arm
 
 # Copy local project source files to docker image
 ADD $PROJECT_NAME $PROJECT_NAME/
 
 # Copy build script ---> TODO
 ADD build_script.sh $WORKDIR
+RUN chmod 777 ./build_script.sh
 
 
 
