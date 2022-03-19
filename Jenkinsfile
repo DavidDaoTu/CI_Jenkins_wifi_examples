@@ -5,15 +5,21 @@ pipeline {
 
     stages {
         stage('Env-setup') {
-            sh 'echo 'Setting up environment' >> env_setup.txt'
+            steps {
+                sh 'echo "Setting up environment" >> env_setup.txt'
+            }
         }
 
         stage('Build') {
-            sh 'echo 'Building project' >> build.txt'
+            steps {
+                sh 'echo "Building project" >> build.txt'
+            }
         }
 
         stage('After-build') {
-            sh 'echo 'After building project' >> after.txt'
+            steps {
+                sh 'echo "After building project" >> after.txt'
+            }
         }
     }
 }
