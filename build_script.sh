@@ -4,11 +4,16 @@ export PATH=$PATH:$WORKSPACE/slc_cli
 echo "env = $env"
 echo "PATH = $PATH"
 echo "In build script AGENT_WORKSPACE = $AGENT_WORKSPACE"
+echo "In build script WORKSPACE = $WORKSPACE"
 
-echo "Running slc test"
+
+
+echo "Running slc test with $WORKSPACE"
 slc --help
 
-
+export PATH=$PATH:$AGENT_WORKSPACE/slc_cli
+echo "Running slc test witn $AGENT_WORKSPACE"
+slc --help
 
 # Pull GSDK from github
 echo "git pull by https"
