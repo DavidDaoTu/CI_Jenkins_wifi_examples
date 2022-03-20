@@ -4,9 +4,11 @@ export PATH=$PATH:$PWD/slc_cli
 echo "PATH = $PATH"
 
 # Pull GSDK from github
+echo "git pull by https"
+git pull https://github.com/SiliconLabs/gecko_sdk.git
+
+echo "git pull by github"
 git pull git@github.com:SiliconLabs/gecko_sdk.git
-
-
 
 
 # Download GNU ARM Toolchain
