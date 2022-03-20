@@ -1,13 +1,19 @@
 #! /bin/sh
 export PATH=$PATH:$PWD/slc_cli
+
 echo "PATH = $PATH"
-echo "Inside build_script.sh" >> test.txt
-apt-get update
+
+# Pull GSDK from github
+git pull git@github.com:SiliconLabs/gecko_sdk.git
+
+
+
 
 # Download GNU ARM Toolchain
-wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/${ARM_TOOLCHAIN_VERSION}/gcc-arm-none-eabi-${ARM_TOOLCHAIN_VERSION}-x86_64-linux.tar.bz2
-mkdir ./gnu_arm
-tar xf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 --strip-components=1 -C ./gnu_arm
+# ARM_TOOLCHAIN_VERSION=$(curl -s https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads | grep -Po '<h3>Version \K.+(?= <span)')
+# wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/${ARM_TOOLCHAIN_VERSION}/gcc-arm-none-eabi-${ARM_TOOLCHAIN_VERSION}-x86_64-linux.tar.bz2
+# mkdir ./gnu_arm
+# tar xf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 --strip-components=1 -C ./gnu_arm
 
 #export PATH=$PATH:/home/tudv7/SimplicityStudio/SimplicityStudio_v5/developer/adapter_packs/commander
 
