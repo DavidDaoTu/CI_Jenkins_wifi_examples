@@ -22,6 +22,8 @@ RUN chmod a+x slc_cli/*
 
 # Download GNU ARM Toolchain
 RUN wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/${ARM_TOOLCHAIN_VERSION}/gcc-arm-none-eabi-${ARM_TOOLCHAIN_VERSION}-x86_64-linux.tar.bz2
+
+# Unpacking GNU ARM Toolchain
 RUN mkdir ./gnu_arm
 RUN tar xf gcc-arm-none-eabi-${ARM_TOOLCHAIN_VERSION}-x86_64-linux.tar.bz2 --strip-components=1 -C ./gnu_arm
 RUN rm -rf gcc-arm-none-eabi-${ARM_TOOLCHAIN_VERSION}-x86_64-linux.tar.bz2
