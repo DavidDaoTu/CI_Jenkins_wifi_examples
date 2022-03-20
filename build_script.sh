@@ -40,8 +40,14 @@ slc signature trust --sdk ./gecko_sdk/
 slc configuration --sdk ./gecko_sdk/
 slc configuration --gcc-toolchain ./gnu_arm
 
-rm -rf out_ethernet_bridge
-slc generate $AGENT_WORKSPACE/ethernet_bridge/ethernet_bridge.slcp -np -d out_ethernet_bridge/ -o makefile --with brd4321a_a06
+if [ -d out_ethernet_bridge ] 
+then
+    echo "Removing out_ethernet_bridge"
+    rm -rf out_ethernet_bridge
+fi
+mkdir out_ethernet_bridge
+
+slc generate $AGENT_WORKSPACE/wfx-fullMAC-tools/ethernet_bridge/ethernet_bridge.slcp -np -d out_ethernet_bridge/ -o makefile --with brd4321a_a06
 
 # cd ./out_ethernet_bridge
 make -j12 -f $AGENT_WORKSPACE/out_ethernet_bridge/ethernet_bridge.Makefile clean all
