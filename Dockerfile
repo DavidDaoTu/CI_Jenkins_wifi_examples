@@ -4,7 +4,7 @@ WORKDIR /home/root
 
 ENV PROJECT_NAME=ethernet_bridge
 ENV ARM_TOOLCHAIN_VERSION=10.3-2021.10
-
+ENV WORKSPACE=/home/root
 
 # Install ultilities (unzip, python3, pip)
 RUN apt-get update

@@ -1,15 +1,22 @@
 #! /bin/sh
-export PATH=$PATH:$PWD/slc_cli
+export PATH=$PATH:$WORKSPACE/slc_cli
 
+echo "env = $env"
 echo "PATH = $PATH"
+echo "In build script AGENT_WORKSPACE = $AGENT_WORKSPACE"
+
+echo "Running slc test"
+slc --help
+
+
 
 # Pull GSDK from github
 echo "git pull by https"
 git clone https://github.com/SiliconLabs/gecko_sdk.git
 
-echo "git pull by github"
-git clone git@github.com:SiliconLabs/gecko_sdk.git
 
+echo "Running ls"
+ls -la
 
 # Download GNU ARM Toolchain
 # ARM_TOOLCHAIN_VERSION=$(curl -s https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads | grep -Po '<h3>Version \K.+(?= <span)')
